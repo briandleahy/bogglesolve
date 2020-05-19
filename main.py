@@ -20,21 +20,12 @@ def main():
     print("Please input boggle board")
     rows = list()
     for _ in range(4):
-        rows.append(tuple(input()))
+        rows = rows + input()
     return solve(rows)
 
-
-def test():
-    rows = (
-        tuple('abcd'),
-        tuple('efgh'),
-        tuple('ijkl'),
-        tuple('mnop'),
-        )
-    return solve(rows)
 
 def solve(rows):
-    board = BoggleBoard(rows)
+    board = BoggleBoard.create_from_formatted_text(rows)
     paths = BOGGLE_SOLVER.solve(board)
     words = [path.text for path in paths]
     return sorted(set(words))

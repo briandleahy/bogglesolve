@@ -4,11 +4,11 @@ two games of Boggle :)"""
 from collections import namedtuple
 
 
-AnswerKey = namedtuple('AnswerKey', ('board', 'words'))
+AnswerKey = namedtuple('AnswerKey', ('board_text', 'words'))
 
 
 GAME1 = AnswerKey(
-    board=(
+    board_text=(
         "cenu\n" +
         "pien\n" +
         "hgda\n" +
@@ -68,7 +68,7 @@ GAME1 = AnswerKey(
 )
 
 GAME2 = AnswerKey(
-    board=(
+    board_text=(
         'damh\n' +
         'letg\n' +
         'bnoc\n' +
