@@ -18,6 +18,12 @@ class TestRealBoards(unittest.TestCase):
         for word in known_words:
             self.assertIn(word, found_words)
 
+    def test_no_duplicates_for_game1(self):
+        rows = tuple([tuple(row) for row in GAME1.board.split('\n')])
+        found_words = solve(rows)
+        for word in found_words:
+            self.assertEqual(found_words.count(word), 1)
+
     def test_all_found_words_in_dictionary_for_game_2(self):
         rows = tuple([tuple(row) for row in GAME2.board.split('\n')])
         found_words = solve(rows)
@@ -30,6 +36,12 @@ class TestRealBoards(unittest.TestCase):
         known_words = GAME2.words
         for word in known_words:
             self.assertIn(word, found_words)
+
+    def test_no_duplicates_for_game2(self):
+        rows = tuple([tuple(row) for row in GAME2.board.split('\n')])
+        found_words = solve(rows)
+        for word in found_words:
+            self.assertEqual(found_words.count(word), 1)
 
 
 if __name__ == '__main__':
