@@ -21,8 +21,20 @@ class BoggleBoard(object):
     def create_from_formatted_text(cls, text):
         text = text.lower()
         rows = [l for l in text.split('\n') if len(l) > 0]
-        characters = tuple([tuple(row) for row in rows])
+        characters = tuple([cls._format_text_row(row) for row in rows])
         return cls(characters)
+
+    @classmethod
+    def _format_text_row(cls, row):
+        if 'qu' in row:
+            sections = row.split('qu')
+            out = tuple()
+            for section in sections[:-1]:
+                out = out + tuple(section) + ('qu',)
+            out = out + tuple(sections[-1])
+        else:
+            out = tuple(row)
+        return out
 
 
 class TextPath(object):
