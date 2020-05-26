@@ -125,3 +125,56 @@ GAME2 = AnswerKey(
     },
 )
 
+
+GAME3 = AnswerKey(
+    board_text=(
+        'heae\n' +
+        'todt\n' +
+        'fahc\n' +
+        'rtio'
+    ),
+    words={
+        'far',
+        'fat',
+        'hat',
+        'rat',
+        'tar',
+        'hart',
+        'haft',
+        'fart',
+        'doe',
+        'toe',
+        'hot',
+        'tea',
+        'eat',
+        'chit',
+        'chat',
+        'char',
+        'that',
+        'tic',
+        'ate',
+        'foe',
+        'hoe',
+        'toad',
+        'teat',
+        'heat',
+        'had',
+        'dart',
+        'art',
+        'tart',
+        'raft',
+        'daft',
+        'oaf',
+        'tat',
+        'the',
+        'tho',
+        'oat',
+        'dote',
+        'tad',
+        'fad',
+        'hit',
+        'ode',
+        'frat',
+        'rad',
+    },
+)

@@ -1,7 +1,7 @@
 import unittest
 
 from bogglesolve.main import solve, BOGGLE_SOLVER
-from bogglesolve.tests.common import GAME1, GAME2
+from bogglesolve.tests.common import GAME1, GAME2, GAME3
 
 
 class TestRealBoards(unittest.TestCase):
@@ -41,6 +41,12 @@ class TestRealBoards(unittest.TestCase):
         found_words = solve(GAME2.board_text)
         for word in found_words:
             self.assertEqual(found_words.count(word), 1)
+
+    def test_all_known_words_found_in_game_3(self):
+        found_words = solve(GAME3.board_text)
+        known_words = GAME3.words
+        for word in known_words:
+            self.assertIn(word, found_words)
 
 
 if __name__ == '__main__':
