@@ -18,9 +18,9 @@ BOGGLE_SOLVER = make_default_boggle_solver()
 
 def main():
     print("Please input boggle board")
-    rows = list()
-    for _ in range(4):
-        rows = rows + input()
+    rows = input()
+    for _ in range(3):
+        rows = rows + '\n' + input()
     return solve(rows)
 
 
