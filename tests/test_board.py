@@ -55,6 +55,17 @@ class TestBoggleBoard(unittest.TestCase):
         board = BoggleBoard.create_from_formatted_text(text)
         self.assertEqual(board.characters, characters)
 
+    def test_transform_to_formatted_text(self):
+        text = (
+            'abcd\n' +
+            'efgh\n' +
+            'ijkqu\n' +
+            'mnop'
+        )
+        board = BoggleBoard.create_from_formatted_text(text)
+        out = board.transform_to_formatted_text()
+        self.assertEqual(out, text)
+
     def test_format_text_row_with_qu(self):
         row = 'abquc'
         out = BoggleBoard._format_text_row(row)

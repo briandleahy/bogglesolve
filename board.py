@@ -24,6 +24,11 @@ class BoggleBoard(object):
         characters = tuple([cls._format_text_row(row) for row in rows])
         return cls(characters)
 
+    def transform_to_formatted_text(self):
+        rows = [''.join(row) for row in self.characters]
+        text = '\n'.join(rows)
+        return text
+
     @classmethod
     def _format_text_row(cls, row):
         if 'qu' in row:
