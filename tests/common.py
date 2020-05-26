@@ -3,8 +3,31 @@ two games of Boggle :)"""
 
 from collections import namedtuple
 
-
 AnswerKey = namedtuple('AnswerKey', ('board_text', 'words'))
+
+
+def rotate_board_90_degrees(boggle_board):
+    rows_old = boggle_board.characters
+
+    chars_new = [list() for _ in range(boggle_board.shape[1])]
+    for row in rows_old:
+        for i, c in enumerate(row):
+            chars_new[i].append(c)
+
+    chars_new = tuple([tuple(r) for r in chars_new])
+    return boggle_board.__class__(chars_new)
+
+
+def flip_board_leftright(boggle_board):
+    chars_old = boggle_board.characters
+    chars_new = tuple([row[::-1] for row in chars_old])
+    return boggle_board.__class__(chars_new)
+
+
+def flip_board_updown(boggle_board):
+    chars_old = boggle_board.characters
+    chars_new = chars_old[::-1]
+    return boggle_board.__class__(chars_new)
 
 
 GAME1 = AnswerKey(
@@ -124,7 +147,6 @@ GAME2 = AnswerKey(
         'able',
     },
 )
-
 
 GAME3 = AnswerKey(
     board_text=(
